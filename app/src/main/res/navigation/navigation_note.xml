@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_note"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mynotes.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragmentToFormFragment"
+            app:destination="@id/formFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <argument
+            android:name="note"
+            android:defaultValue="@null"
+            app:argType="com.example.mynotes.source.note.NoteModel"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.example.mynotes.ui.form.FormFragment"
+        android:label="FormFragment"
+        tools:layout="@layout/fragment_note_form" />
+</navigation>
